@@ -1,3 +1,5 @@
+package hbase.example
+
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.hbase.client._
 import org.apache.hadoop.hbase.{HBaseConfiguration, TableName}
@@ -13,8 +15,8 @@ object CreateTableScala {
 
     val htd: TableDescriptor = TableDescriptorBuilder
       .newBuilder(tableName)
-      .setColumnFamily(ColumnFamilyDescriptorBuilder.newBuilder("attributes".getBytes).build())
-      .setColumnFamily(ColumnFamilyDescriptorBuilder.newBuilder("metrics".getBytes).build())
+      .setColumnFamily(ColumnFamilyDescriptorBuilder.newBuilder("attributes".getBytes).build)
+      .setColumnFamily(ColumnFamilyDescriptorBuilder.newBuilder("metrics".getBytes).build)
       .build()
 
     if (!admin.tableExists(tableName)) {
